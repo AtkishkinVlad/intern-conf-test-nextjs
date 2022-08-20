@@ -11,16 +11,14 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Diadoc Promo Demo',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
-  author: 'Travis Fischer',
+  domain: 'nextjs-notion-starter-kit-for-intern-conf',
+  author: 'Конференция стажеров в Контуре',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'Пример промо страницы с использованием NextJS шаблона',
 
   // social usernames (optional)
   twitter: 'transitive_bs',
-  github: 'transitive-bullshit',
-  linkedin: 'fisch2',
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
 
@@ -42,24 +40,23 @@ export default siteConfig({
   // any pages defined here will override their default URL paths
   // example:
   //
-  // pageUrlOverrides: {
-  //   '/foo': '067dd719a912471ea9a3ac10710e7fdf',
-  //   '/bar': '0be6efce9daf42688f65c76b89f8eb27'
-  // }
-  pageUrlOverrides: null,
+  pageUrlOverrides: {
+    '/about': parsePageId('https://supreme-pound-39d.notion.site/13cbabea6a9d46fc83a631b81f240b83'),
+    '/contacts': parsePageId('https://supreme-pound-39d.notion.site/48119e213e1d45d0bd7dbb9709e45806')
+  },
 
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
-  navigationStyle: 'default'
-  // navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'About',
-  //     pageId: 'f1199d37579b41cbabfc0b5174f4256a'
-  //   },
-  //   {
-  //     title: 'Contact',
-  //     pageId: '6a29ebcb935a4f0689fe661ab5f3b8d1'
-  //   }
-  // ]
+  //navigationStyle: 'default'
+  navigationStyle: 'custom',
+  navigationLinks: [
+    {
+      title: 'О нас',
+      pageId: parsePageId('https://supreme-pound-39d.notion.site/13cbabea6a9d46fc83a631b81f240b83')
+    },
+    {
+      title: 'Контакты',
+      pageId: parsePageId('https://supreme-pound-39d.notion.site/48119e213e1d45d0bd7dbb9709e45806')
+    }
+  ]
 })

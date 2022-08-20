@@ -384,5 +384,20 @@
 }
 
 .notion-column .notion-text {
-  background-color: red;
+  background-color: rgb(0, 197, 168, 0.7);
+  color: white;
+  padding: .5em;
+  border-radius: .5em;
+}
+
+.notion-column:hover {
+  transform: scale(1.05);
+  transition: transform .15s ease-out;
+}
+
+.notion-row {
+  display: flex;
+  overflow: visible;
+  width: 100%;
+  max-width: 100%;
 }
