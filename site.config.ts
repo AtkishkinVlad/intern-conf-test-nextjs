@@ -3,8 +3,9 @@ import { parsePageId } from 'notion-utils'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: parsePageId('https://supreme-pound-39d.notion.site/ab9599230e624aaabd9e9c7b8e81df61'),
-
+  rootNotionPageId: process.env.LANG == "ru_RU.UTF-8"
+    ? parsePageId('https://supreme-pound-39d.notion.site/ab9599230e624aaabd9e9c7b8e81df61')
+    : parsePageId('https://supreme-pound-39d.notion.site/6fef6a20338d494d8329ce24d68844d5'),
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
