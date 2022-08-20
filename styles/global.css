@@ -129,3 +129,7 @@ body {
   height: 1.2em !important;
   width: 1.2em !important;
 }
+
+.notion-frame {
+  background-color: black;
+}
