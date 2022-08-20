@@ -382,3 +382,7 @@
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
   display: none;
 }
+
+.notion-column .notion-text {
+  background-color: red;
+}

@@ -1,15 +1,16 @@
 import { siteConfig } from './lib/site-config'
+import { parsePageId } from 'notion-utils'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: '7875426197cf461698809def95960ebf',
+  rootNotionPageId: parsePageId('https://supreme-pound-39d.notion.site/ab9599230e624aaabd9e9c7b8e81df61'),
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
   rootNotionSpaceId: null,
 
   // basic site info (required)
-  name: 'Next.js Notion Starter Kit',
+  name: 'Diadoc Promo Demo',
   domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
   author: 'Travis Fischer',
 
