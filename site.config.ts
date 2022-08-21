@@ -1,9 +1,11 @@
 import { siteConfig } from './lib/site-config'
 import { parsePageId } from 'notion-utils'
 
+const ru = Intl.DateTimeFormat().resolvedOptions().locale !== 'ru-RU';
+
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: process.env.LANG === "ru_RU.UTF-8"
+  rootNotionPageId: ru
     ? parsePageId('https://supreme-pound-39d.notion.site/ab9599230e624aaabd9e9c7b8e81df61')
     : parsePageId('https://supreme-pound-39d.notion.site/6fef6a20338d494d8329ce24d68844d5'),
   // if you want to restrict pages to a single notion workspace (optional)
@@ -19,7 +21,7 @@ export default siteConfig({
   description: 'Пример промо страницы с использованием NextJS шаблона',
 
   // social usernames (optional)
-  twitter: 'transitive_bs',
+  youtube: 'СКБКонтурру',
   // newsletter: '#', // optional newsletter URL
   // youtube: '#', // optional youtube channel name or `channel/UCGbXXXXXXXXXXXXXXXXXXXXXX`
 
@@ -42,8 +44,12 @@ export default siteConfig({
   // example:
   //
   pageUrlOverrides: {
-    '/about': parsePageId('https://supreme-pound-39d.notion.site/13cbabea6a9d46fc83a631b81f240b83'),
-    '/contacts': parsePageId('https://supreme-pound-39d.notion.site/48119e213e1d45d0bd7dbb9709e45806')
+    '/about': ru 
+      ? parsePageId('https://supreme-pound-39d.notion.site/13cbabea6a9d46fc83a631b81f240b83')
+      : parsePageId('https://supreme-pound-39d.notion.site/710cfff288634642a0cbf6e7242d9959'),
+    '/contacts': ru
+      ? parsePageId('https://supreme-pound-39d.notion.site/48119e213e1d45d0bd7dbb9709e45806')
+      : parsePageId('https://supreme-pound-39d.notion.site/0e5c5a235a6247629fa619f9e9fdfe1f')
   },
 
   // whether to use the default notion navigation style or a custom one with links to
@@ -52,12 +58,20 @@ export default siteConfig({
   navigationStyle: 'custom',
   navigationLinks: [
     {
-      title: 'О нас',
-      pageId: parsePageId('https://supreme-pound-39d.notion.site/13cbabea6a9d46fc83a631b81f240b83')
+      title: !ru
+        ? 'О нас' 
+        : '联系人',
+      pageId: ru
+        ? parsePageId('https://supreme-pound-39d.notion.site/13cbabea6a9d46fc83a631b81f240b83')
+        : parsePageId('https://supreme-pound-39d.notion.site/710cfff288634642a0cbf6e7242d9959')
     },
     {
-      title: 'Контакты',
-      pageId: parsePageId('https://supreme-pound-39d.notion.site/48119e213e1d45d0bd7dbb9709e45806')
+      title: !ru
+        ? 'Контакты' 
+        : '电路',
+      pageId: ru
+        ? parsePageId('https://supreme-pound-39d.notion.site/48119e213e1d45d0bd7dbb9709e45806')
+        : parsePageId('https://supreme-pound-39d.notion.site/0e5c5a235a6247629fa619f9e9fdfe1f')
     }
   ]
 })

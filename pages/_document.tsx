@@ -8,12 +8,11 @@ export default class MyDocument extends Document {
       <IconContext.Provider value={{ style: { verticalAlign: 'middle' } }}>
         <Html lang='en'>
           <Head>
-            <link rel='shortcut icon' href='/favicon.ico' />
+            <link rel='shortcut icon' href='/kontur-avatar-512.png' />
             <link
-              rel='icon'
+              rel='image_src'
               type='image/png'
-              sizes='32x32'
-              href='favicon.png'
+              href='kontur_avatar'
             />
 
             <link rel='manifest' href='/manifest.json' />
