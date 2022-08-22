@@ -58,7 +58,7 @@ export default siteConfig({
   navigationStyle: 'custom',
   navigationLinks: [
     {
-      title: !ru
+      title: ru
         ? 'О нас' 
         : '联系人',
       pageId: ru
@@ -66,7 +66,7 @@ export default siteConfig({
         : parsePageId('https://supreme-pound-39d.notion.site/710cfff288634642a0cbf6e7242d9959')
     },
     {
-      title: !ru
+      title: ru
         ? 'Контакты' 
         : '电路',
       pageId: ru
